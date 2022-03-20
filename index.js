@@ -40,3 +40,28 @@ const {colorCarro}= carro;
 const {color} =carro;
 console.log(color);  */
 
+fetch ('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200')
+.then(res => res.json())
+.then ( data => 
+    {
+       data.result.forEach(element => {
+            console.log(element)
+        });
+        console.log(data)
+    })
+    .catch ( error => console.log(error));
+   /*
+    const obtenerpokemon = async() => {
+        try {
+            const result= await fetch('https://pokeapi.co/api/v2/pokemon?limit=100&offset=200');
+            const data= await result.json();
+            console.log (data.result);
+            data.result.forEach(element => {
+                console.log(element.name);
+            });
+        } catch (error){
+            console.log(error);
+        }
+    }
+obtenerpokemon();
+*/
